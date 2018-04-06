@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class SimpleCalculator {
 	
 	private static String command;
-	private static float num1;
-	private static float num2;
+	private static int num1;
+	private static int num2;
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -35,22 +35,32 @@ public class SimpleCalculator {
 		
 		command=sc.next();
 		
-		if (command.equals("+")){
-			System.out.println(num1 + "+"+ num2 + "=" + (num1+num2));
-		}else if(command.equals("-")) {
-			System.out.println(num1 + "-"+ num2 + "=" + (num1-num2));
-		}else if(command.equals("/")) {
-			System.out.println(num1 + "/"+ num2 + "=" + (num1/num2));
-		}else if (command.equals("*")) {
-			System.out.println(num1 + "*"+ num2 + "=" + (num1*num2));
-		}else {
-			System.out.println("Operator is not valid!");
-		}
+		calculation(num1,num2,command);
+		
+		
 		
 	}
 	
 		
-
+	public static int calculation(int num1, int num2, String command){
+		
+		if (command.equals("+")){
+			System.out.println(num1 + "+"+ num2 + "=" + (num1+num2));
+			return num1+num2;
+		}else if(command.equals("-")) {
+			System.out.println(num1 + "-"+ num2 + "=" + (num1-num2));
+			return num1-num2;
+		}else if(command.equals("/")) {
+			System.out.println(num1 + "/"+ num2 + "=" + (num1/num2));
+			return num1/num2;
+		}else if (command.equals("*")) {
+			System.out.println(num1 + "*"+ num2 + "=" + (num1*num2));
+			return num1*num2;
+		}else {
+			System.out.println("Operator is not valid!");
+			return 0;
+		}
+	}
 	
 	
 	
