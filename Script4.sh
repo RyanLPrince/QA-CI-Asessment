@@ -1,5 +1,4 @@
 #!/bin/bash
-e
 echo "input your number"
 read num
 count=2
